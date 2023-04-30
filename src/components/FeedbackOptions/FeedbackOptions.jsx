@@ -1,5 +1,5 @@
 import { Component } from 'react';
-
+import styles from './FeedbackOptions.module.css';
 export class FeedbackOptions extends Component {
   render() {
     const { options, onLeaveFeedback } = this.props;
@@ -7,8 +7,12 @@ export class FeedbackOptions extends Component {
     return (
       <div>
         {options.map(option => (
-          <button key={option} onClick={() => onLeaveFeedback(option)}>
-            {option.charAt(0).toUpperCase() + option.substring(1)}
+          <button
+            className={styles.Button}
+            key={option}
+            onClick={() => onLeaveFeedback(option)}
+          >
+            {option}
           </button>
         ))}
       </div>
